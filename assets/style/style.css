@@ -1,0 +1,448 @@
+/* -------------------------------- CSS reset ------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+    text-decoration: none
+}
+br {
+    user-select: none
+}
+
+/* --------------------------------- General -------------------------------- */
+
+@font-face {
+	font-family: 'Consola';
+	src: url(../fonts/consola/CONSOLA.TTF)
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url(../fonts/montserrat/Montserrat-VariableFont_wght.ttf)
+}
+* {
+    color: rgba(255, 255, 255, 0.801);
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+*::selection {
+    background: #520b03;
+}
+::-webkit-scrollbar {
+	background-color: #dedede;
+	width: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #8c8c8c;
+}
+
+/* --------------------------------- Loader --------------------------------- */
+
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(10, 10, 10);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader h2 span {
+    font-family: 'Consola', Arial, Helvetica, sans-serif;
+    font-size: 3.5rem;
+    margin-top: -30px;
+}
+#input-cursor {
+    height: 47px;
+    transform: translateY(-5%);
+    width: 1px;
+    animation: flash 1s linear infinite;
+    background: rgba(255, 255, 255, 0.93);
+}
+@keyframes flash {
+    50% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+.no-scroll {  
+overflow:hidden;  
+}
+.fade {
+    animation: fade 0.7s ease-in-out;
+}
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* --------------------------------- Header --------------------------------- */
+
+header {
+    background: url(../img/bg.jpg) center/cover;
+}
+nav ul {
+    width: 100%;
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-li a {
+    margin: 0 40px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    user-select: none;
+    color: rgba(255, 255, 255, 0.93);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.nav-li a:hover {
+    color: rgb(255, 255, 255);
+}
+.nav-li {
+    transition: 0.2s;
+}
+.nav-li:active {
+    transform: scale(1.055);
+}
+.header-main {
+    padding: 180px 280px 290px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+h1 {
+    font-size: 3.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.877);
+}
+.header-main p {
+    font-size: 1.03rem;
+}
+.header-main::before {
+    content: "";
+    position: absolute;
+    background: rgb(201, 159, 60);
+    width: 900px;
+    height: 1px;
+    bottom: 225px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* --------------------------------- main & letter --------------------------------- */
+
+main {
+    background: #000000;
+    padding-bottom: 100px;
+}
+
+#letter {
+    width: 40%;
+    margin: 0 auto;
+    padding: 30px 40px;
+    margin-top: -60px;
+    background: rgb(24, 24, 24);
+    border: none;
+    border-radius: 5px;
+}
+#letter .card {
+    background: none;
+    border: 1px solid rgba(244, 244, 244, 0.929);
+    border-radius: 7px;
+    padding: 25px;
+    text-align: justify;
+}
+#letter .card i {
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.901);
+}
+#i-container {
+    margin-top: 15px;
+    display: block;
+    text-align: right;
+}
+#signing-letter {
+    display: block;
+    text-align: right;
+}
+
+/* ------------------------------ presentation ------------------------------ */
+
+#presentation {
+    padding: 100px 0;
+    position: relative;
+    overflow-x: hidden;
+}
+.presentation-container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    gap: 45px;
+    align-items: center;
+}
+.presentation-container::before {
+    content: "";
+    position: absolute;
+    width: 120vw;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(201,159,60,1) 0%, rgba(0,0,0,0.8968837535014006) 57%, rgba(201,159,60,1) 100%);
+    transform: translateX(-17%);
+}
+.presentation-container img {
+    height: 300px;
+}
+.presentation-container img, .presentation-container p {
+    z-index: 2;
+}
+
+/* --------------------------------- project -------------------------------- */
+
+#project {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.project-container h3 {
+    font-size: 2rem;
+    margin-bottom: 34px;
+    font-weight: 600;
+}
+.card-project {
+    padding: 18px 0;
+}
+.card-project h4 {
+    font-size: 1.15rem;
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.879);
+    transition: 0.25s;
+    user-select: none;
+    width: fit-content;
+}
+.card-project h4:hover {
+    color: rgb(255, 255, 255);
+}
+.card-project h4:active {
+    transform: scale(1.055);
+}
+.card-project p {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.788);
+}
+
+/* --------------------------------- footer --------------------------------- */
+
+footer {
+    background: #161616;
+    border-top: 1px solid rgba(201,159,60,1);
+    padding: 100px 85px 30px;
+}
+.contact {
+    margin-bottom: 100px;
+}
+.contact h5 {
+    margin-bottom: 10px;
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.741);
+}
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.642);
+}
+.footer-bottom i {
+    color: rgba(201, 159, 60, 0.812);
+    margin-left: 10px;
+}
+
+/* ---------------------------- Responsive design --------------------------- */
+
+@media screen and (max-width: 1230px) {
+    .header-main {
+        padding: 180px 150px 290px;
+    }
+    .header-main::before {
+        width: 750px;
+    }
+    #letter {
+        width: 55%;
+    }
+    .presentation-container {
+        width: 85%;
+    }
+    #project {
+        width: 67%;
+    }
+}
+@media screen and (max-width: 940px) {
+    .normal-text {
+        font-size: 0.9rem;
+    }
+    .nav-li a {
+        margin: 0 25px;
+        font-size: 0.85rem;
+    }
+    .header-main {
+        padding: 160px 80px 250px;
+    }
+    .header-main::before {
+        width: 500px;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    #letter {
+        width: 75%;
+    }
+    #letter .card i {
+        font-size: 2.5rem;
+    }
+    .presentation-container {
+        width: 95%;
+    }
+    .presentation-container img {
+        height: 200px;
+    }
+    .project-container h3 {
+        font-size: 1.5rem;
+    }
+    h4 a {
+        font-size: 1rem;
+    }
+    footer {
+        padding: 50px 25px 25px;
+    }
+}
+@media screen and (max-width: 765px) {
+    .normal-text {
+        font-size: 0.75rem;
+    }
+    .nav-li a {
+        margin: 0 18px;
+        font-size: 0.75rem;
+    }
+    h1 {
+        font-size: 2.7rem;
+    }
+    .header-main p {
+        font-size: 0.75rem;
+    }
+    .header-main::before {
+        width: 350px;
+    }
+    #presentation {
+        display: none;
+    }
+    #project {
+        margin-top: 100px;
+        width: 90%;
+    }
+    .contact {
+        margin-bottom: 50px;
+    }
+    .contact h5 {
+        font-size: 0.9rem;
+    }
+    .footer-bottom p, .contact p {
+        font-size: 0.7rem;
+    }
+    .footer-bottom i {
+        display: none;
+    }
+}
+@media screen and (max-width: 610px) {
+    .loader h2 span {
+        font-size: 2.1rem;
+    }
+    .normal-text {
+        font-size: 0.63rem;
+    }
+    .nav-li a {
+        margin: 0 10px;
+        font-size: 0.60rem;
+    }
+    .header-main {
+        display: block;
+        text-align: center;
+    }
+    h1 {
+        margin-bottom: 15px;
+        font-size: 2.2rem;
+    }
+    .header-main p {
+        font-size: 0.63rem;
+    }
+    .header-main::before {
+        width: 260px;
+    }
+    #letter {
+        padding: 20px 20px;
+    }
+}
+@media screen and (max-width: 415px) {
+    nav {
+        display: none;
+    }
+    .header-main {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .header-main::before {
+        width: 150px;
+        bottom: 75px;
+    }
+    main {
+        padding-top: 40px;
+    }
+    #letter .card i {
+        font-size: 2rem;
+    }
+}
