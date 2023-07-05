@@ -42,9 +42,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-a {
-    text-decoration: none
-}
 br {
     user-select: none
 }
@@ -53,11 +50,11 @@ br {
 
 @font-face {
 	font-family: 'Consola';
-	src: url(../fonts/consola/CONSOLA.TTF)
+	src: url(../fonts/consola/CONSOLA.TTF);
 }
 @font-face {
 	font-family: 'Montserrat';
-	src: url(../fonts/montserrat/Montserrat-VariableFont_wght.ttf)
+	src: url(../fonts/montserrat/Montserrat-VariableFont_wght.ttf);
 }
 * {
     color: rgba(255, 255, 255, 0.801);
@@ -125,7 +122,7 @@ overflow:hidden;
 /* --------------------------------- Header --------------------------------- */
 
 header {
-    background: url(../img/bg.jpg) center/cover;
+    background: url(../img/bg.webp) center/cover;
 }
 nav ul {
     width: 100%;
@@ -135,6 +132,7 @@ nav ul {
     justify-content: center;
 }
 .nav-li a {
+    text-decoration: none;
     margin: 0 40px;
     font-size: 0.95rem;
     text-transform: uppercase;
@@ -432,8 +430,7 @@ footer {
         display: none;
     }
     .header-main {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding: 100px 40px 100px;
     }
     .header-main::before {
         width: 150px;
